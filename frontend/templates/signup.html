@@ -1,0 +1,51 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static "css/singup.css" %}">
+</head>
+<body>
+
+
+
+<form class="form" action="" method="POST">
+
+    {% csrf_token %}
+
+    <p class="title">Signup Page</p>
+    <p class="message">Signup now and get full access to our app. </p>
+
+    <div>
+
+        <label>
+            <input required="" placeholder="" type="text" class="input" name="user_name" required>
+            <span>UserName</span>
+        </label>
+
+
+    </div>  
+            
+    <label>
+        <input required="" placeholder="" type="email" class="input" name="email" required>
+        <span>Email</span>
+    </label> 
+        
+    <label>
+        <input required="" placeholder="" type="password" class="input" name="password" required>
+        <span>Password</span>
+    </label>
+    <label>
+        <input required="" placeholder="" type="password" class="input" name="confirm_password" required>
+        <span>Confirm password</span>
+    </label>
+    <button class="submit">Submit</button>
+    <p class="signin">Already have an acount ? <a href="/">Signin</a> </p>
+</form>
+
+    
+</body>
+</html>

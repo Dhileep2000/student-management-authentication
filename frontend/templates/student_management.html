@@ -1,0 +1,113 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<table class="table table-hover">
+    <thead>
+        <br>
+        <tr>
+            <th>id</th>
+            <th>first_name</th>
+            <th>last_name</th>
+            <th>email</th>
+            <th>phone_number</th>
+            <th>branch</th>
+            <th>action</th>
+            <th>update</th>
+            <th>delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for student_datas in student_data %}
+        <tr>
+            <th>{{student_datas.id}}</th>
+            <td>{{student_datas.first_name}}</td>
+            <td>{{student_datas.last_name}}</td>
+            <td>{{student_datas.email}}</td>
+            <td>{{student_datas.phone_number}}</td>
+            <td>{{student_datas.branch}}</td>
+            <td>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#viewModal{{student_datas.id}}"><i class="fa-solid fa-circle-exclamation"></i> view</button>
+
+                <!-- Button trigger modal -->
+
+  <div class="modal fade" id="viewModal{{student_datas.id}}" tabindex="-1" aria-labelledby="viewModalLabel{{student_datas.id}}" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="viewModalLabel{{student_datas.id}}">student:{{student_datas.first_name}} {{student_datas.last_name}}</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <ul>
+            <li><strong>id:</strong>{{student_datas.id}}</li>
+            <li><strong>first_name:</strong>{{student_datas.first_name}}</li>
+            <li><strong>last_name:</strong>{{student_datas.last_name}}</li>
+            <li><strong>email:</strong>{{student_datas.email}}</li>
+            <li><strong>phone_number:</strong>{{student_datas.phone_number}}</li>
+            <li><strong>branch:</strong>{{student_datas.branch}}</li>
+          </ul>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+        </td>
+
+        <td>
+            
+            <a href="{% url "update" student_datas.id %}"><button type="button" class="btn btn-warning"><i class="fa-solid fa-pen-to-square"></i> update</button></a>
+
+        </td>
+
+        <td>
+            
+            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal{{student_datas.id}}"><i class="fa-solid fa-trash"></i> delete</button>
+             
+  
+  <!-- Modal -->
+  <div class="modal fade" id="deleteModal{{student_datas.id}}" tabindex="-1" aria-labelledby="deleteModalLabel{{student_datas.id}}" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="deleteModalLabel{{student_datas.id}}">conformation for delete</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>are you sure you want to delete the student</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">no</button>
+          <form action="{% url "delete" student_datas.id %}" method="POST" class="d-inline">
+            {% csrf_token %}
+            <input type="submit" value="delete" class="btn btn-primary">
+          </form>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+        </td>
+
+
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

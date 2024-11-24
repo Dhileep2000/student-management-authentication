@@ -1,0 +1,106 @@
+/* From Uiverse.io by Praashoo7 */ 
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding:20px;
+    margin: auto;
+    margin-top: 100px;
+    width:700px ;
+    background-color: hwb(0 100% 0%);
+    border-radius: 25px;
+    transition: .4s ease-in-out;
+    
+  }
+  
+  .form:hover {
+    transform: scale(1.05);
+    border: 1px solid black;
+  }
+  
+  #heading {
+    text-align: center;
+    margin: 2em;
+    font-weight: bold;
+    color: rgb(13, 13, 13);
+    font-size: 1.2em;
+  }
+  
+  .field {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5em;
+    border-radius: 25px;
+    padding: 0.6em;
+    width: 500px;
+   margin: auto;
+    border: none;
+    outline: none;
+    color: rgb(10, 10, 10);
+    background-color: #ffffff;
+    box-shadow: inset 2px 5px 10px rgb(204, 202, 202);
+  }
+  
+  .input-icon {
+    height: 1.3em;
+    width: 1.3em;
+    fill: rgb(9, 9, 9);
+  }
+  
+  .input-field {
+    background: none;
+    border: none;
+    outline: none;
+    width: 100%;
+    color: #070707;
+  
+  }
+  
+  .form .btn {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    margin-top: 2.5em;
+ 
+  }
+  
+  .button1 {
+    padding: 0.5em;
+    padding-left: 1.1em;
+    padding-right: 1.1em;
+    border-radius: 5px;
+    margin-right: 0.5em;
+    border: none;
+    outline: none;
+    transition: .4s ease-in-out;
+    background-color: #3b3d3f;
+    color: rgb(255, 254, 254);
+  }
+  
+  .button1:hover {
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+  }
+  
+  .button2 {
+    padding: 0.5em;
+    padding-left: 2.3em;
+    padding-right: 2.3em;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    transition: .4s ease-in-out;
+    background-color: #3b3d3f;
+    color: white;
+  }
+  
+  .button2:hover {
+    background-color: black;
+    color: white;
+  }
+  
+ .sign{
+  padding-right: 100px;
+ }
+  
